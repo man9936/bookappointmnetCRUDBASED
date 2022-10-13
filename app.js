@@ -60,7 +60,7 @@ let submit=document.getElementById("submit")
    //  });
  })
 
- function displayUser(user){
+function displayUser(user){
     document.getElementById("fname").value=''
     document.getElementById("fphone").value=''
     document.getElementById("femail").value=''
@@ -73,10 +73,10 @@ let submit=document.getElementById("submit")
    //  }
 
  const parentNode=document.getElementById("list-parent")
-  const childHTML=`<li id="${user.email}">${user.name} -${user.email}- ${user.phone} -${user.date}
+  const childHTML=`<li id="${user.email}">${user.name} -${user.email}- ${user.phone} -${user.date} 
                   
-                    <button onclick=editUser('${user.email}','${user.name}','${user.phone}','${user.date}'')>Edit</button>
-                    <button onclick=delUser('${user.email}','${user.name}','${user.phone}','${user.date}') >X</button>
+                    <button onclick=editUser('${user.email}','${user.name}','${user.phone}','${user.date}','${user._id}')>Edit</button>
+                    <button onclick=delUser('${user.email}','${user._id}') >X</button>
 
                     </li>`
   if(parentNode.innerHTML){
@@ -94,17 +94,22 @@ let submit=document.getElementById("submit")
     document.getElementById("femail").value=emailId
     document.getElementById("timeforcall").value=date
 
-    delUser(emailId)
+    delUser(emailId,Id)
    // document.getElementById(emailId).remove();
    // localStorage.removeItem(emailId);
+
+
 
  }
 
 
- const delUser=((emailId)=>{
-   localStorage.removeItem(emailId);
-   document.getElementById(emailId).remove();
-  
-   });
+function delUser(emailId,Id){
 
+   
+   document.getElementById(emailId).remove();
+   axios.delete(`https://crudcrud.com/api/778cdcf56c264e1b93d8c0f2bd029e3a/appointmentData/${Id}`)
+  
+  // localStorage.removeItem(emailId);
+
+}
 
