@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+    <style >
+
+        *{
+        box-sizing: 0;
+        margin: 0;
+        padding: 0;
+        }
+        body{
+            background-color: aqua;
+            color: brown;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        
+        #form-container{
+            flex-basis: 2;
+            border: 2px yellow solid;
+            height: max-content;
+            border-radius: 10px;
+        
+        
+        }
+        form{
+            height: 100%;
+            background-color:white;
+            color: black;
+        
+            
+        }
+        form>input{
+            width: 98%;
+        }
+        #logo{
+            margin: 55px 35px;
+        
+        }
+        
+        #a1, #a2{
+           
+        
+            margin: 5px 5px;
+            border: 2px yellow solid;
+            background-color: whitesmoke;
+            height: fit-content;
+        }
+        .list{
+            margin: 20px 20px;
+        }
+        
+        .display-list{
+            display: flex;
+            justify-content: space-between;
+            width: 60vw;
+            
+        }</style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logo">
+                <h1><b>YAV</b></h1>
+            </div>
+            <div id="form-container">
+                <h1>Book a Call</h1>
+                <p>Book a call slot and our representatives will reach you</p>
+                <hr>
+                <form  >
+                    <label for="fname">Name:</label><br>
+
+        <input type="text"  id="fname" name="fname" required><br>
+
+        <label for="femail">Email:</label><br>
+
+        <input type="email"  id="femail" name="femail" required><br>
+
+        <label for="fphone">Phone:</label><br>
+
+        <input type="text"  id="fphone" name="fphone"><br>
+
+        <label for="timeforcall">Time for call:</label><br>
+
+        <input type="date" id="timeforcall" name="timeforcall" placeholder="2022-10-11" value="" >
+
+        <input type="time"  id="time" name="timeforcall" placeholder="11:00" value="11:00" required><br>
+
+        
+
+        
+
+        <input type="submit" id="submit" value="Get A Call" style="width :100%">
+
+                    
+                </form>
+            </div>
+            <div id="menu"></div>
+            <a id="a1" href="/action_page.php> ">Schedule a Call</a>
+
+            <br><br>
+        
+            <a id="a2"href="/action_page.php> ">Hire with us</a>
+        
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="list">
+           <ul id="list-parent">
+            
+           
+           </ul>
+        
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js" ></script>
+    <script src="app.js" ></script>
+</body>
+
+
+</html>
